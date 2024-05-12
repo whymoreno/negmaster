@@ -15,7 +15,7 @@ local script_vers_text = '1.00'
 local update_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.ini"
 local update_path = getWorkingDirectory() .. "/negmaster.ini"
 
-local script_url = ""
+local script_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.lua"
 local script_path = thisScript().path 
 
 
@@ -34,7 +34,7 @@ function main()
         if status == dlstatus.STATUS_ENDDOWNLOADDATA then
             neGMasterini = inicfg.load(nil, update_path)
                 if tonumber(neGMasterini.info.vers) > script_vers then
-                sampAddChatMessage('Г…Г±ГІГј Г®ГЎГ­Г®ГўГ . Г‚ГҐГ°Г±ГЁГї: ' .. neGMasterini.info.vers_text, -1)
+                sampAddChatMessage('Есть обнова. Версия: ' .. neGMasterini.info.vers_text, -1)
                 update_state = true
                 end
             os.remove(update_path)
@@ -42,6 +42,15 @@ function main()
     end)
 
     while true do
+
+        if update_state then
+
+            downloadUrlToFile(script_url, script_path, function(id, status)
+                if status == dlstatus.STATUS_ENDDOWNLOADDATA then
+                sampAddChatMessage('neGMaster обновлен.', -1)
+                end
+            end)
+        end
 
         wait(0)
 
@@ -60,11 +69,6 @@ function main()
         if isKeyJustPressed(VK_B) and not sampIsCursorActive() then
             sampSendChat('/sleep')
         end
-
-        downloadUrlToFile(update_url, update_path, function(id, status)
-            if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-                
-        end)
 
     end
 end
