@@ -70,6 +70,8 @@ function main()
         if isKeyJustPressed(VK_B) and not sampIsCursorActive() then
             sampSendChat('/sleep')
         end
+        
+        wait(0)
 
     end
 end
