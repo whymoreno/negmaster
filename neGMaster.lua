@@ -9,8 +9,8 @@ local neGMaster = inicfg.load(nil, directIni)
 
 update_state = false
  
-local script_vers = 5
-local script_vers_text = '1.04'
+local script_vers = 7
+local script_vers_text = '1.06'
 
 local update_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.ini"
 local update_path = getWorkingDirectory() .. "/negmaster.ini"
@@ -26,7 +26,7 @@ function main()
     if not isSampLoaded() and not isSampfuncsLoaded() then return end
     while not isSampAvailable() do wait(0) end 
 
-    sampAddChatMessage('neGMaster ver 1.04 loaded', -1)
+    sampAddChatMessage('neGMaster ver 1.06 loaded', -1)
 
     wait(0)
 
