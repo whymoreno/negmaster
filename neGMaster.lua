@@ -34,7 +34,7 @@ function main()
         if status == dlstatus.STATUS_ENDDOWNLOADDATA then
             neGMasterini = inicfg.load(nil, update_path)
                 if tonumber(neGMasterini.info.vers) > script_vers then
-                sampAddChatMessage('Есть обнова. Версия: ' .. neGMasterini.info.vers_text, -1)
+                sampAddChatMessage('Г…Г±ГІГј Г®ГЎГ­Г®ГўГ . Г‚ГҐГ°Г±ГЁГї: ' .. neGMasterini.info.vers_text, -1)
                 update_state = true
                 end
             os.remove(update_path)
