@@ -27,7 +27,10 @@ function main()
     while not isSampAvailable() do wait(100) end
 
     if autoupdate_loaded and enable_autoupdate and Update then
-        pcall(Update.check, Update.json_url, Update.prefix, Update.url)
+        pcall(Update.check, Update.json_url, Update.prefix, Update.url) then
+            sampAddChatMessage('neGMaster new version uploaded')
+            wait(200)
+        end
     end
 
     sampAddChatMessage('neGMaster ver0.2 loaded', -1)
