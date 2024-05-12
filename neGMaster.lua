@@ -15,7 +15,7 @@ local script_vers_text = '1.04'
 local update_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.ini"
 local update_path = getWorkingDirectory() .. "/negmaster.ini"
 
-local script_url = "https://github.com/whymoreno/negmaster/raw/main/neGMaster.luac"
+local script_url = "https://github.com/whymoreno/negmaster/raw/main/neGMaster.lua"
 local script_path = thisScript().path 
 
 
