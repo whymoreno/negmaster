@@ -12,7 +12,7 @@ if enable_autoupdate then
     if update_loaded then
         autoupdate_loaded, Update = pcall(Updater)
         if autoupdate_loaded then
-            Update.json_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.json" .. tostring(os.clock())
+            Update.json_url = "https://raw.githubusercontent.com/whymoreno/negmaster/main/neGMaster.json?" .. tostring(os.clock())
             Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
             Update.url = "https://github.com/whymoreno/negmaster/"
         end
