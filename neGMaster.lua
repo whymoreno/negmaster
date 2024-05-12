@@ -5,7 +5,7 @@ local dlstatus = require ('lib.moonloader').download_status
 local inicfg = require 'inicfg'
 
 local directIni = "moonloader\\neGMaster.ini"
-local neGMasterIni = inicfg.load(nil, directIni)
+local neGMaster = inicfg.load(nil, directIni)
 
 update_state = false
  
@@ -32,9 +32,9 @@ function main()
 
     downloadUrlToFile(update_url, update_path, function(id, status)
         if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-            neGMasterini = inicfg.load(nil, update_path)
-            if tonumber(neGMasterini.info.vers) > script_vers then
-                sampAddChatMessage('Есть обнова. Версия: ' .. neGMasterini.info.vers_text, -1)
+            neGMaster = inicfg.load(nil, update_path)
+            if tonumber(neGMaster.info.vers) > script_vers then
+                sampAddChatMessage('Есть обнова. Версия: ' .. neGMaster.info.vers_text, -1)
                 update_state = true 
             end
             os.remove(update_path)
